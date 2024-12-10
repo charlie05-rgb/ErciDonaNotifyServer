@@ -1,0 +1,49 @@
+Notificación recibida: Se ha realizado una operación en la tabla ventas. ID de venta: 5, Producto: SEAT Cordoba, Cantidad: 2
+Notificación recibida: Se ha realizado una operación en la tabla ventas. ID de venta: 6, Producto: BMW e30M3, Cantidad: 1
+Notificación recibida: Se ha realizado una operación en la tabla ventas. ID de venta: 7, Producto: BMW e30M6, Cantidad: 1
+Notificación recibida: Se ha realizado una operación en la tabla ventas. ID de venta: 9, Producto: BMW e90, Cantidad: 5
+Notificación recibida: Se ha realizado una operación en la tabla ventas. ID de venta: 10, Producto: BMW e30, Cantidad: 2
+Notificación recibida: {"id_veta" : 12, "producto" : "Motos", "cantidad" : 5}
+Notificación recibida: {"id_veta" : 13, "producto" : "Vacas", "cantidad" : 5}
+Notificación recibida: {"id_veta" : 14, "producto" : "Gatos", "cantidad" : 5}
+Notificación recibida: {"nombre" : "carlos", "rol" : "user", "ultimaconexion" : null, "usuario" : "gruesomorac@gmail.com"}
+Notificación recibida: {"nombre" : "carlos", "rol" : "user", "ultimaconexion" : null, "usuario" : "gruesomorac@gmail.com"}
+Notificación recibida: {"nombre" : "carlos", "rol" : "user", "ultimaconexion" : null, "usuario" : "profe.dam2@gmail.com"}
+Notificación recibida: {"nombre" : "carlos", "rol" : "user", "ultimaconexion" : null, "usuario" : "profe.dam2@gmail.com"}
+Notificación recibida: {"nombre" : "Manolo", "rol" : "user", "ultimaconexion" : null, "usuario" : "gruesomorac@gmail.com.com"}
+Notificación recibida: {"nombre" : "Manolo", "rol" : "user", "ultimaconexion" : null, "usuario" : "gruesomorac@gmail.com"}
+Notificación recibida: {"nombre" : "Manolo", "rol" : "user", "ultimaconexion" : null, "usuario" : "gruesomorac@gmail.com"}
+Notificación recibida: {"nombre" : "Manolo", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com"}
+Notificación recibida: {"nombre" : "Manolo", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com"}
+Notificación recibida: {"nombre" : "Manolo", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com"}
+Notificación recibida: {"nombre" : "Manolo", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 838348}
+Notificación recibida: {"nombre" : "Manolo", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 801391}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 554443}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 160691}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 349917}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 291761}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 249592}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 887201}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 790864}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 874738}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 593194}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 251941}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 575914}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : null, "correo" : "gruesomorac@gmail.com", "codigo" : 385931}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : "2024-11-12T17:44:35.54611", "correo" : "gruesomorac@gmail.com", "codigo" : 885926}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "ultimaconexion" : "2024-11-12T17:44:35.54611", "correo" : "gruesomorac@gmail.com", "codigo" : 756573}
+Notificación recibida: {"campoNombre" : "carlos", "campoRol" : "user", "campoCodigo" : null}
+Notificación recibida: {"campoNombre" : "carlos", "campoRol" : "user", "campoCodigo" : null}
+Notificación recibida: {"campoNombre" : "carlos", "campoRol" : "user", "campoCodigo" : 620522}
+Notificación recibida: {"campoNombre" : "carlos", "campoRol" : "user", "campoCodigo" : 375733}
+Notificación recibida: {"campoNombre" : "carlos", "campoRol" : "user", "campoCodigo" : 640336}
+Notificación recibida: {"campoNombre" : "carlos", "campoRol" : "user", "campoCodigo" : 420279}
+Notificación recibida: {"campoNombre" : "carlos", "campoRol" : "user", "campoCodigo" : 634592}
+Notificación recibida: {"campoNombre" : "carlos", "campoRol" : "user", "campoCodigo" : 241055}
+Notificación recibida: {"campoNombre" : "carlos", "campoRol" : "user", "campoCodigo" : 769887}
+Notificación recibida: {"campoNombre" : "carlos", "campoRol" : "user", "campoCodigo" : 690888}
+Notificación recibida: {"campoNombre" : "carlos", "campoRol" : "user", "campoCodigo" : 305156}
+Notificación recibida: {"nombre" : "carlos", "rol" : "user", "codigo" : 813174, "correo" : "gruesomorac@gmail.com"}
+Notificación recibida: {"nombre" : "Grueso", "rol" : "user", "codigo" : 257822, "correo" : "grueso@gmail.com"}
+Notificación recibida: {"nombre" : "Grueso2", "rol" : "user", "codigo" : 119619, "correo" : "gruesomorac@gmail.com"}
+Notificación recibida: {"nombre" : "Carlos", "rol" : "user", "codigo" : 250070, "correo" : "gruesomorac@gmail.com"}
