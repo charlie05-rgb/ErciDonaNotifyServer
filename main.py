@@ -191,6 +191,7 @@ with SSHTunnelForwarder(
     #cursor.execute("LISTEN ventas_notificaciones;")
     cursor.execute("LISTEN ventas_notificaciones")
 
+
     print("Escuchando actualizaciones...")  # Indica que está escuchando las notificaciones
 
     # Abrir el archivo de log de forma manual en modo 'a' (append) para agregar nuevas entradas
