@@ -98,12 +98,12 @@ def enviar_emailQR(data):
 
 
 
-    qr_base64 = generar_qr_base64("prueba qr")  # Pasar aqui el codigo para convertirlo imagen qr
-    # Incrustar el QR como una imagen inline
-    img_data = base64.b64decode(qr_base64)
-    image = MIMEImage(img_data, name="qr_code.png")
-    image.add_header('Content-ID', '<qr_code>')  # Usar un ID único para referenciar en el HTML
-    mensaje_email.attach(image)
+    # qr_base64 = generar_qr_base64("prueba qr")  # Pasar aqui el codigo para convertirlo imagen qr
+    # # Incrustar el QR como una imagen inline
+    # img_data = base64.b64decode(qr_base64)
+    # image = MIMEImage(img_data, name="qr_code.png")
+    # image.add_header('Content-ID', '<qr_code>')  # Usar un ID único para referenciar en el HTML
+    # mensaje_email.attach(image)
 
     # Configuración del servidor SMTP
     try:
