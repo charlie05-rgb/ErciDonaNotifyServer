@@ -2,6 +2,7 @@ import json
 from email.mime.image import MIMEImage
 
 import select
+from sshtunnel import SSHTunnelForwarder
 import psycopg2
 
 import qrcode
@@ -11,6 +12,7 @@ import io
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from msilib.schema import Environment
 from jinja2 import Environment, FileSystemLoader
 import base64
 
@@ -171,60 +173,60 @@ def enviar_email(data):
 #         local_bind_address=("localhost", 22)  # Puerto local para el túnel (puede cambiarse si es necesario)
 # ) as tunnel:
 #     print("Túnel SSH establecido con éxito.")  # Imprime un mensaje cuando el túnel SSH esté listo
-#
-#     # Conexión a la base de datos PostgreSQL a través del túnel SSH
-conexion = psycopg2.connect(
-    dbname="supermercado",  # Nombre de la base de datos (usuario debe proporcionar el nombre correcto)
-    user="postgres",  # Usuario de la base de datos (usuario debe proporcionar el usuario adecuado)
-    password="1234",  # Contraseña de la base de datos (usuario debe proporcionar la contraseña correcta)
-    host="localhost",  # Usamos localhost porque estamos trabajando a través del túnel SSH
-    port=5432  # Usar el puerto del túnel para la conexión local
-)
+
+    # Conexión a la base de datos PostgreSQL a través del túnel SSH
+    conexion = psycopg2.connect(
+        dbname="supermercado",  # Nombre de la base de datos (usuario debe proporcionar el nombre correcto)
+        user="postgres",  # Usuario de la base de datos (usuario debe proporcionar el usuario adecuado)
+        password="1234",  # Contraseña de la base de datos (usuario debe proporcionar la contraseña correcta)
+        host="localhost",  # Usamos localhost porque estamos trabajando a través del túnel SSH
+        port=5432  # Usar el puerto del túnel para la conexión local
+    )
 
     # Establecer el nivel de aislamiento para la conexión
-conexion.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
-cursor = conexion.cursor()
+    conexion.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
+    cursor = conexion.cursor()
 
-# Ejecutar un comando SQL para escuchar las notificaciones en el canal 'ventas_notificaciones'
-#cursor.execute("LISTEN ventas_notificaciones;")
-cursor.execute("LISTEN ventas_notificaciones")
+    # Ejecutar un comando SQL para escuchar las notificaciones en el canal 'ventas_notificaciones'
+    #cursor.execute("LISTEN ventas_notificaciones;")
+    cursor.execute("LISTEN ventas_notificaciones")
 
-print("Escuchando actualizaciones...")  # Indica que está escuchando las notificaciones
+    print("Escuchando actualizaciones...")  # Indica que está escuchando las notificaciones
 
-# Abrir el archivo de log de forma manual en modo 'a' (append) para agregar nuevas entradas
-log_file = open('log_actualizaciones.txt', 'a')
+    # Abrir el archivo de log de forma manual en modo 'a' (append) para agregar nuevas entradas
+    log_file = open('log_actualizaciones.txt', 'a')
 
-try:
-    while True:
-        # Esperar notificación de cambios en la base de datos
-        if select.select([conexion], [], [], 5) == ([], [], []):
-            # Si no hay notificaciones, espera 5 segundos antes de continuar
-            print("Esperando notificación...")
-        else:
-            conexion.poll()  # Verificar si hay nuevas notificaciones
-            while conexion.notifies:
-                # Si hay notificaciones, procesarlas
-                notificacion = conexion.notifies.pop(0)
-                print("Notificación recibida:", notificacion.payload)  # Imprime la notificación en la consola
-                #Convertir a json
+    try:
+        while True:
+            # Esperar notificación de cambios en la base de datos
+            if select.select([conexion], [], [], 5) == ([], [], []):
+                # Si no hay notificaciones, espera 5 segundos antes de continuar
+                print("Esperando notificación...")
+            else:
+                conexion.poll()  # Verificar si hay nuevas notificaciones
+                while conexion.notifies:
+                    # Si hay notificaciones, procesarlas
+                    notificacion = conexion.notifies.pop(0)
+                    print("Notificación recibida:", notificacion.payload)  # Imprime la notificación en la consola
+                    #Convertir a json
 
-                #Datos que capturamos, hay que pasarlos de Text a json
-                data = json.loads(notificacion.payload)
-                print("Datos json,", data)
+                    #Datos que capturamos, hay que pasarlos de Text a json
+                    data = json.loads(notificacion.payload)
+                    print("Datos json,", data)
 
-                # id_venta = data.get('id_venta')
-                # print(id_venta)
+                    # id_venta = data.get('id_venta')
+                    # print(id_venta)
 
-                # Escribir la notificación en el archivo de log
-                log_file.write(f"Notificación recibida: {notificacion.payload}\n")
-                log_file.flush()  # Asegúrate de que los datos se escriben inmediatamente en el archivo
-                enviar_email(data)
+                    # Escribir la notificación en el archivo de log
+                    log_file.write(f"Notificación recibida: {notificacion.payload}\n")
+                    log_file.flush()  # Asegúrate de que los datos se escriben inmediatamente en el archivo
+                    enviar_email(data)
 
-except KeyboardInterrupt:
-    print("Cerrando la conexión...")  # Si se interrumpe el proceso, imprime este mensaje
+    except KeyboardInterrupt:
+        print("Cerrando la conexión...")  # Si se interrumpe el proceso, imprime este mensaje
 
-finally:
-    # Cerrar el cursor y la conexión de forma segura
-    cursor.close()
-    conexion.close()
-    log_file.close()  # No olvides cerrar el archivo de log
+    finally:
+        # Cerrar el cursor y la conexión de forma segura
+        cursor.close()
+        conexion.close()
+        log_file.close()  # No olvides cerrar el archivo de log
