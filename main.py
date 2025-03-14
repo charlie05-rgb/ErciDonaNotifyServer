@@ -173,6 +173,7 @@ def enviar_email(data):
 # ) as tunnel:
 #     print("Túnel SSH establecido con éxito.")  # Imprime un mensaje cuando el túnel SSH esté listo
 
+while True:
     # Conexión a la base de datos PostgreSQL a través del túnel SSH
     conexion = psycopg2.connect(
         dbname="supermercado",  # Nombre de la base de datos (usuario debe proporcionar el nombre correcto)
