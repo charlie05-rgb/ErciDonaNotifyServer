@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificación de Actualización</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        p {
+            font-size: 16px;
+            color: #333;
+        }
+        .footer {
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Hola {{ nombre_usu }}!</h1>
+        <p>Aquí tienes el código junto a los datos del ticket</p>
+        <ul>
+            <li><strong>Precio:</strong> {{ precio }}</li>
+            <li><strong>Matrícula coche:</strong> {{ matricula }}</li>
+            <li><strong>Hora entrada:</strong> {{ hora_entrada }}</li>
+            <li><strong>Hora salida:</strong> {{ hora_salida }}</li>
+            <li><strong>Plaza aparcamiento:</strong> {{ plaza }}</li>
+            <li><strong>Codigo:</strong> {{ codigo }}</li>
+        </ul>
+        <p>Gracias por estar con nosotros.</p>
+        <div class="footer">
+            <p>Este es un correo automatizado. No respondas a este mensaje.</p>
+        </div>
+    </div>
+</body>
+</html>
