@@ -12,7 +12,6 @@ import io
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from msilib.schema import Environment
 from jinja2 import Environment, FileSystemLoader
 import base64
 
